@@ -1,0 +1,236 @@
+@import url(https://fonts.google.com/specimen/Inter);
+
+/* Presets */
+:root {
+    /* Colors */
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey-700: hsl(0, 0%, 20%);
+    --grey-800: hsl(0, 0%, 12%);
+    --grey-900: hsl(0, 0%, 8%);
+
+    /* Typography */
+    --font-family: 'Inter', sans-serif;
+    --fs-paragraph: 14px;
+    --fw-light: 400;
+    --fw-medium: 600;
+    --fw-heavy: 700;
+}
+
+
+/* **CSS RESET by Piccalil** */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+/* Card styling */
+
+body {
+    overflow: hidden;
+    background-color: var(--grey-900);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-family);
+}
+
+.attribution {
+  color: var(--white);
+}
+
+.card {
+    background-color: var(--grey-800);
+    margin: auto;
+    width: 386px;
+    height: 658px;
+    padding-bottom: 28px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.avatar {
+  display: block;
+  margin: 10% auto 10% auto;
+
+  height: auto;
+  max-height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    color: var(--white);
+    font-size: 30px;
+    margin-top: auto;
+    font-weight: var(--fw-heavy);
+}
+
+.location {
+    color: var(--green);
+    font-size: 18px;
+    margin-top: 8px;
+    font-weight: var(--fw-medium);
+}
+
+.description {
+    color: var(--white);
+    font-weight: var(--fw-light);
+}
+
+/* Social links */
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+  padding: 16px;
+}
+
+.links a {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: var(--fw-medium);
+  background-color: var(--grey-700);
+  width: 320px;
+  height: 52px;
+  margin-top: 14px;
+  border-radius: 10px;
+  border: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon styling */
+.links a span {
+  margin-right: 10px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+/* Button hover */
+.links a:hover {
+  background-color: var(--green);
+  cursor: pointer;
+  color: var(--grey-900);
+  scale: 1.05;
+}
+
+/* Mobile view */
+@media (max-width: 375px) {
+  .card {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .avatar {
+    scale: 0.8;
+    margin: 0 auto;
+  }
+
+  .info {
+    width: 90%;
+  }
+
+  .links {
+    width: 90%;;
+  }
+
+  .links  a {
+    width: 100%;
+  }
+}
